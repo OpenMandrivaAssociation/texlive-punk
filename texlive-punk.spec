@@ -64,6 +64,7 @@ found in punk-latex.
 %{_texmfdistdir}/fonts/tfm/public/punk/punk20.tfm
 %{_texmfdistdir}/fonts/tfm/public/punk/punkbx20.tfm
 %{_texmfdistdir}/fonts/tfm/public/punk/punksl20.tfm
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -74,3 +75,5 @@ found in punk-latex.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
