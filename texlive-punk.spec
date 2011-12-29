@@ -16,7 +16,6 @@ BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
 Requires(post):	texlive-kpathsea
-Conflicts:	texlive-texmf <= 20110705-3
 
 %description
 A response to the assertion in a lecture that "typography tends
@@ -29,20 +28,12 @@ which is slightly odd in claiming that the fonts are T1-
 encoded. A (possibly) more rational support package is to be
 found in punk-latex.
 
-%pre
-    %_texmf_mktexlsr_pre
-
 %post
-    %_texmf_mktexlsr_post
-
-%preun
-    if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_pre
-    fi
+    %{_sbindir}/texlive.post
 
 %postun
     if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_post
+	%{_sbindir}/texlive.post
     fi
 
 #-----------------------------------------------------------------------
@@ -65,7 +56,6 @@ found in punk-latex.
 %{_texmfdistdir}/fonts/tfm/public/punk/punk20.tfm
 %{_texmfdistdir}/fonts/tfm/public/punk/punkbx20.tfm
 %{_texmfdistdir}/fonts/tfm/public/punk/punksl20.tfm
-%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -76,5 +66,3 @@ found in punk-latex.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts %{buildroot}%{_texmfdistdir}
-mkdir -p %{buildroot}%{_tlpkgobjdir}
-cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
