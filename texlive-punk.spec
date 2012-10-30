@@ -1,17 +1,18 @@
-# revision 13293
+# revision 27388
 # category Package
 # catalog-ctan /fonts/punk
-# catalog-date 2008-11-30 13:31:17 +0100
+# catalog-date 2012-05-30 14:49:05 +0200
 # catalog-license knuth
 # catalog-version undef
 Name:		texlive-punk
-Version:	20081130
-Release:	2
+Version:	20120530
+Release:	1
 Summary:	Donald Knuth's punk font
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/punk
 License:	KNUTH
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/punk.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/punk.doc.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -22,7 +23,7 @@ A response to the assertion in a lecture that "typography tends
 to lag behind other stylistic changes by about 10 years". Knuth
 felt it was (in 1988) time to design a replacement for his
 designs of the 1970s, and came up with this font! The fonts are
-distributed as MetaFont source. The package offers LaTeX
+distributed as Metafont source. The package offers LaTeX
 support by Rohit Grover, from an original by Sebastian Rahtz,
 which is slightly odd in claiming that the fonts are T1-
 encoded. A (possibly) more rational support package is to be
@@ -56,13 +57,15 @@ found in punk-latex.
 %{_texmfdistdir}/fonts/tfm/public/punk/punk20.tfm
 %{_texmfdistdir}/fonts/tfm/public/punk/punkbx20.tfm
 %{_texmfdistdir}/fonts/tfm/public/punk/punksl20.tfm
+%doc %{_texmfdistdir}/doc/fonts/punk/punk.sty
+%doc %{_texmfdistdir}/doc/fonts/punk/punktest.tex
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0
+%setup -c -a0 -a1
 
 %build
 
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar fonts %{buildroot}%{_texmfdistdir}
+cp -fpar fonts doc %{buildroot}%{_texmfdistdir}
