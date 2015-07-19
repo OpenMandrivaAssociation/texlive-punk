@@ -6,7 +6,7 @@
 # catalog-version undef
 Name:		texlive-punk
 Version:	20120530
-Release:	8
+Release:	9
 Summary:	Donald Knuth's punk font
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/punk
