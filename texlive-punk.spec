@@ -1,9 +1,3 @@
-# revision 27388
-# category Package
-# catalog-ctan /fonts/punk
-# catalog-date 2012-05-30 14:49:05 +0200
-# catalog-license knuth
-# catalog-version undef
 Name:		texlive-punk
 Version:	20170414
 Release:	1
@@ -39,26 +33,9 @@ found in punk-latex.
 
 #-----------------------------------------------------------------------
 %files
-%{_texmfdistdir}/fonts/source/public/punk/punk.mf
-%{_texmfdistdir}/fonts/source/public/punk/punk10.mf
-%{_texmfdistdir}/fonts/source/public/punk/punk12.mf
-%{_texmfdistdir}/fonts/source/public/punk/punk20.mf
-%{_texmfdistdir}/fonts/source/public/punk/punka.mf
-%{_texmfdistdir}/fonts/source/public/punk/punkae.mf
-%{_texmfdistdir}/fonts/source/public/punk/punkbx20.mf
-%{_texmfdistdir}/fonts/source/public/punk/punkd.mf
-%{_texmfdistdir}/fonts/source/public/punk/punkg.mf
-%{_texmfdistdir}/fonts/source/public/punk/punkl.mf
-%{_texmfdistdir}/fonts/source/public/punk/punkp.mf
-%{_texmfdistdir}/fonts/source/public/punk/punksl.mf
-%{_texmfdistdir}/fonts/source/public/punk/punksl20.mf
-%{_texmfdistdir}/fonts/tfm/public/punk/punk10.tfm
-%{_texmfdistdir}/fonts/tfm/public/punk/punk12.tfm
-%{_texmfdistdir}/fonts/tfm/public/punk/punk20.tfm
-%{_texmfdistdir}/fonts/tfm/public/punk/punkbx20.tfm
-%{_texmfdistdir}/fonts/tfm/public/punk/punksl20.tfm
-%doc %{_texmfdistdir}/doc/fonts/punk/punk.sty
-%doc %{_texmfdistdir}/doc/fonts/punk/punktest.tex
+%{_texmfdistdir}/fonts/source/public/punk
+%{_texmfdistdir}/fonts/tfm/public/punk
+%doc %{_texmfdistdir}/doc/fonts/punk
 
 #-----------------------------------------------------------------------
 %prep
