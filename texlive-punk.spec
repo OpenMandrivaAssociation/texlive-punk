@@ -1,5 +1,5 @@
 Name:		texlive-punk
-Version:	20170414
+Version:	20180303
 Release:	1
 Summary:	Donald Knuth's punk font
 Group:		Publishing
