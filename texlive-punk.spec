@@ -1,6 +1,6 @@
 Name:		texlive-punk
 Version:	20180303
-Release:	2
+Release:	3
 Summary:	Donald Knuth's punk font
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/punk
