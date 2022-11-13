@@ -1,12 +1,12 @@
 Name:		texlive-punk
-Version:	20190228
+Version:	27388
 Release:	1
 Summary:	Donald Knuth's punk font
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/punk
 License:	KNUTH
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/punk.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/punk.doc.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/punk.r%{version}.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/punk.doc.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -24,12 +24,12 @@ encoded. A (possibly) more rational support package is to be
 found in punk-latex.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
@@ -39,7 +39,7 @@ found in punk-latex.
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1
+%autosetup -p1 -c -a1
 
 %build
 
