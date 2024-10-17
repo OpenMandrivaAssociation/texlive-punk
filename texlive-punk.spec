@@ -3,7 +3,7 @@ Version:	27388
 Release:	2
 Summary:	Donald Knuth's punk font
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/fonts/punk
+URL:		https://www.ctan.org/tex-archive/fonts/punk
 License:	KNUTH
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/punk.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/punk.doc.r%{version}.tar.xz
