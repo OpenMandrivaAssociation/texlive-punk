@@ -1,48 +1,26 @@
-Name:		texlive-punk
-Version:	27388
-Release:	2
-Summary:	Donald Knuth's punk font
+%global tl_name punk
+%global tl_revision 27388
+
+Name:		texlive-%{tl_name}
+Version:	%{tl_revision}
+Release:	1
+Summary:	Donald Knuths punk font
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/fonts/punk
-License:	KNUTH
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/punk.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/punk.doc.r%{version}.tar.xz
+License:	knuth
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/punk.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/punk.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-A response to the assertion in a lecture that "typography tends
-to lag behind other stylistic changes by about 10 years". Knuth
-felt it was (in 1988) time to design a replacement for his
-designs of the 1970s, and came up with this font! The fonts are
-distributed as Metafont source. The package offers LaTeX
-support by Rohit Grover, from an original by Sebastian Rahtz,
-which is slightly odd in claiming that the fonts are T1-
-encoded. A (possibly) more rational support package is to be
-found in punk-latex.
+A response to the assertion in a lecture that "typography tends to lag
+behind other stylistic changes by about 10 years". Knuth felt it was (in
+1988) time to design a replacement for his designs of the 1970s, and
+came up with this font! The fonts are distributed as Metafont source.
+The package offers LaTeX support by Rohit Grover, from an original by
+Sebastian Rahtz, which is slightly odd in claiming that the fonts are
+T1-encoded. A (possibly) more rational support package is to be found in
+punk-latex
 
-%post
-%{_sbindir}/texlive.post
-
-%postun
-if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-fi
-
-#-----------------------------------------------------------------------
-%files
-%{_texmfdistdir}/fonts/source/public/punk
-%{_texmfdistdir}/fonts/tfm/public/punk
-%doc %{_texmfdistdir}/doc/fonts/punk
-
-#-----------------------------------------------------------------------
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar fonts doc %{buildroot}%{_texmfdistdir}
